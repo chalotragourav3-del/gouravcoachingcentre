@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Academy - Your Path to Success</title>
+    <style>
+        /* === BASIC RESET & GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4a6ee0;
+            color: #fff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #3a5ac6;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #2c3e50;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4a6ee0;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4a6ee0;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(135deg, #4a6ee0 0%, #6a11cb 100%);
+            color: white;
+            padding: 150px 0 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* === ABOUT SECTION === */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* === COURSES SECTION === */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-img {
+            height: 200px;
+            background: #ddd; /* PLACEHOLDER - REPLACE WITH IMAGE */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-info {
+            padding: 20px;
+        }
+
+        .course-info h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact {
+            background: #f8f9fa;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: #4a6ee0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* For simplicity, you can add a hamburger menu later */
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Excel Academy</a> <!-- CHANGE YOUR NAME -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Unlock Your Potential with Expert Coaching</h1> <!-- CHANGE HEADLINE -->
+            <p>We provide top-quality coaching for JEE, NEET, and Board exams, guiding students to achieve their academic dreams with proven results and dedicated mentorship.</p> <!-- CHANGE TAGLINE -->
+            <a href="#contact" class="btn">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Excel Academy, we believe in nurturing talent and building futures. With over 10 years of experience, our faculty is committed to providing personalized attention to every student.</p> <!-- CHANGE ABOUT TEXT -->
+                    <br>
+                    <p>Our teaching methodology combines fundamental concepts with advanced problem-solving techniques, ensuring our students are well-prepared for any challenge.</p>
+                    <br>
+                    <ul>
+                        <li>Experienced and Dedicated Faculty</li>
+                        <li>Small Batch Sizes for Personal Attention</li>
+                        <li>Regular Tests and Performance Analysis</li>
+                        <li>Comprehensive Study Material</li>
+                        <li>Doubt Clearing Sessions</li>
+                    </ul> <!-- CHANGE FEATURES -->
+                    <br>
+                    <a href="#courses" class="btn">View Our Courses</a>
+                </div>
+                <div class="about-image">
+                    <!-- REPLACE THE SOURCE WITH YOUR OWN IMAGE -->
+                    <img src="https://via.placeholder.com/600x400" alt="Students in class at Excel Academy"> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-img" style="background-color: #a1c4fd;"></div> <!-- PLACEHOLDER COLOR -->
+                    <div class="course-info">
+                        <h3>JEE (Mains & Advanced)</h3>
+                        <p>Comprehensive course for engineering aspirants covering Physics, Chemistry, and Mathematics with intensive problem-solving practice.</p> <!-- CHANGE COURSE INFO -->
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-img" style="background-color: #a3ded8;"></div> <!-- PLACEHOLDER COLOR -->
+                    <div class="course-info">
+                        <h3>NEET (UG)</h3>
+                        <p>Focused program for medical aspirants with in-depth coverage of Biology, Chemistry, and Physics, complemented by regular mock tests.</p> <!-- CHANGE COURSE INFO -->
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-img" style="background-color: #fbc2eb;"></div> <!-- PLACEHOLDER COLOR -->
+                    <div class="course-info">
+                        <h3>Board Classes (X & XII)</h3>
+                        <p>Structured classes for CBSE and State Boards to build strong fundamentals and secure excellent marks in school examinations.</p> <!-- CHANGE COURSE INFO -->
+                    </div>
+                </div>
+                <!-- Add more course cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <div class="contact-details">
+                        <p><strong>Address:</strong> 123 Education Street, Knowledge City, IN 560001</p> <!-- CHANGE ADDRESS -->
+                        <p><strong>Phone:</strong> +91 98765 43210</p> <!-- CHANGE PHONE -->
+                        <p><strong>Email:</strong> info@excelacademy.com</p> <!-- CHANGE EMAIL -->
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Feel free to visit our centre for a detailed consultation. We are open from 8:00 AM to 8:00 PM, Monday to Saturday.</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Course Interested In</label>
+                            <input type="text" id="course" name="course">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excel Academy</h3> <!-- CHANGE NAME -->
+                    <p>Building futures, one student at a time.</p> <!-- CHANGE TAGLINE -->
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: #ccc; text-decoration: none;">Home</a></li>
+                        <li><a href="#about" style="color: #ccc; text-decoration: none;">About</a></li>
+                        <li><a href="#courses" style="color: #ccc; text-decoration: none;">Courses</a></li>
+                        <li><a href="#contact" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <!-- Add your social media links here -->
+                        <a href="#" style="color: #ccc; text-decoration: none; margin-right: 10px;">Facebook</a>
+                        <a href="#" style="color: #ccc; text-decoration: none; margin-right: 10px;">Instagram</a>
+                        <a href="#" style="color: #ccc; text-decoration: none;">YouTube</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Excel Academy. All Rights Reserved.</p> <!-- CHANGE NAME AND YEAR -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission alert (for demo purposes)
+        // In a real website, you would connect this to a backend service.
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset(); // Clear the form
+        });
+    </script>
+</body>
+</html>
